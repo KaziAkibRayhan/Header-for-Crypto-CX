@@ -4,10 +4,13 @@ import { BsAlarm } from "react-icons/bs";
 import { CgExport } from "react-icons/cg";
 import { HiOutlineArrowTrendingUp } from "react-icons/hi2";
 import { MdTimeline } from "react-icons/md";
-import List from './Components/List';
+import { MdOutlineCandlestickChart } from "react-icons/md";
 
 
 function App() {
+  const toggleMode = () => {
+    document.body.classList.toggle('darkMode')
+  }
   return (
     <div>
 
@@ -19,52 +22,82 @@ function App() {
               <RxCross2 className='separate-over-item2' />
             </div>
           </div>
-          <div className="menu-item">
-            <input type="text" className='inputSearch' />
-          </div>
-          <div className="menu-item">
+          <div className="menu-item item">
 
-            <div class="showhim">HOVER ME
-              <div class="showme">
+            <input type="text" className='inputSearch' id="itc_chart_input" />
+            <div id="itc_chart_open_div"></div>
+
+          </div>
+          <div className="menu-item item dropdown">
+            <span>30min</span>
+            <div className="dropdown-item">
+              <ul>
+                <li>5m</li>
+                <li>1m</li>
+                <li>2w</li>
+                <li>7d</li>
+                <li>1d</li>
+                <li>12h</li>
+                <li>2h</li>
+                <li>1h</li>
+                <li>30min</li>
+              </ul>
+            </div>
+
+          </div>
+          <div className="menu-item item">
+            1m
+          </div>
+          <div className="menu-item item dropdown">
+            <HiOutlineArrowTrendingUp />
+            <div className="dropdown-item">
+              <ul>
+                <li style={{ display: 'flex', gap: 5, alignItems: 'center' }}><MdOutlineCandlestickChart /><span>Candlestick</span></li>
+                <li style={{ display: 'flex', gap: 5, alignItems: 'center' }}><HiOutlineArrowTrendingUp /><span>Line</span></li>
+              </ul>
+            </div>
+          </div>
+          <div className="menu-item item dropdown">
+            <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
+              <MdTimeline /> <span>Indicator</span>
+              <div className="dropdown-item">
                 <ul>
-                  <li>5m</li>
-                  <li>1m</li>
-                  <li>2w</li>
-                  <li>7d</li>
-                  <li>1d</li>
-                  <li>12h</li>
-                  <li>2h</li>
-                  <li>1h</li>
-                  <li>30min</li>
+                  <li>Exponential Moving Average (EMA)</li>
+                  <li>Simple Moving Average (SMA)</li>
+                  <li>Bollinger Bands (BBands)</li>
+                  <li>Average True Range (ATR)</li>
+                  <li>MACD</li>
+                  <li>Stochastic Oscillator</li>
+                  <li>Relative Strength Index (RSI)</li>
+                  <li>Commodity Channel Index (CCI)</li>
+                  <li>Rate of Change (ROC)</li>
+                  <li>Average Directional Index (ADX)Average Directional Index (ADX)</li>
                 </ul>
               </div>
             </div>
-
           </div>
-          <div className="menu-item">
-            1m
-          </div>
-          <div className="menu-item">
-            <HiOutlineArrowTrendingUp />
-          </div>
-          <div className="menu-item">
+          <div className="menu-item item" >
             <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
-              <MdTimeline /> Indicator
+              <CgExport /> <span>Export</span>
             </div>
           </div>
-          <div className="menu-item" >
+          <div className="menu-item item">
             <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
-              <CgExport /> Export
-            </div>
-          </div>
-          <div className="menu-item">
-            <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
-              <BsAlarm /> Alert
+              <BsAlarm /> <span>Alert</span>
             </div>
           </div>
         </div>
-        <List />
       </div>
+
+      <div className="theme-switch-wrapper">
+        <em style={{ marginRight: '8px', fontWeight: 'bold' }}>Light</em>
+        <label className="theme-switch" htmfor="checkbox">
+          <input onClick={toggleMode} type="checkbox" id="checkbox" />
+          <div className="slider round"></div>
+        </label>
+        <em style={{ fontWeight: 'bold' }}>Dark</em>
+      </div>
+
     </div>
   );
 }
