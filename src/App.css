@@ -9,6 +9,17 @@
   --font-size: large;
 }
 
+[data-theme="dark"] {
+  --primary-color: #141620;
+  --secondary-color: #272A3B;
+  --accent-color: #acbbc8;
+  --text-color: #758696;
+  --border-color: #748390;
+  --hover-items1: #acbbc8;
+  --hover-items2: #acbbc8;
+  --font-size: large;
+}
+
 .header {
   display: flex;
   align-items: center;
@@ -17,15 +28,10 @@
   background-color: var(--primary-color);
 }
 
-.darkMode {
-  background-color: #73c2ff;
-  color: white;
-}
 
 .menu {
   display: flex;
   align-items: center;
-  position: relative;
 }
 
 .menu-item {
@@ -66,7 +72,8 @@
 .inputSearch {
   border: none;
   font-size: large;
-  background-color: var(--primary-color)
+  background-color: var(--primary-color);
+  color: var(--accent-color);
 }
 
 .inputSearch:focus {
@@ -88,30 +95,74 @@
 }
 
 /* dropdown menu */
+
+.dropbtn {
+  background-color: #04AA6D;
+  color: white;
+  padding: 10px;
+  font-size: 14px;
+  border: none;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+
+.dropdown-content a:hover {background-color: #ddd;}
+
+.dropdown:hover .dropdown-content {display: block;}
+
+.dropdown:hover .dropbtn {background-color: #3e8e41;}
+
+/* .dropdown {
+  position: relative;
+}
+
 .dropdown-item {
   display: none;
   position: absolute;
   top: 28px;
   background-color: var(--secondary-color);
   min-width: 170px;
+  z-index: 1;
 }
+
 
 .dropdown:hover .dropdown-item {
   display: block;
 }
+
 .dropdown-item ul {
   background-color: var(--secondary-color);
 }
+
 .dropdown-item ul>li {
   list-style-type: none;
   margin-top: 8px;
-  text-align: left;
+  padding: 8px;
 }
 
 .dropdown-item ul>li:hover {
   color: var(--primary-color);
   background-color: var(--accent-color)
-}
+} */
 
 /* btn toggle dark $ light */
 .theme-switch-wrapper {

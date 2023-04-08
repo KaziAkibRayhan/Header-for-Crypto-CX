@@ -2,16 +2,13 @@ import './App.css';
 import { RxBookmark, RxCross2 } from "react-icons/rx";
 import { BsAlarm } from "react-icons/bs";
 import { CgExport } from "react-icons/cg";
-import { HiOutlineArrowTrendingUp } from "react-icons/hi2";
-import { MdTimeline } from "react-icons/md";
-import { MdOutlineCandlestickChart } from "react-icons/md";
+// import { HiOutlineArrowTrendingUp } from "react-icons/hi2";
+// import { MdTimeline } from "react-icons/md";
+// import { MdOutlineCandlestickChart } from "react-icons/md";
+import './header';
 
 
 function App() {
-  // const toggleMode = () => {
-  //   document.body.classList.toggle('darkMode')
-  // }
-
   return (
     <div>
       <div className="header">
@@ -29,39 +26,36 @@ function App() {
 
           </div>
           <div className="menu-item item dropdown">
-            <span>30min</span>
-            <div className="dropdown-item">
-              <ul>
-                <li><span>5m</span></li>
-                <li><span>1m</span></li>
-                <li><span>2w</span></li>
-                <li><span>7d</span></li>
-                <li><span>1d</span></li>
-                <li><span>12h</span></li>
-                <li><span>2h</span></li>
-                <li><span>1h</span></li>
-                <li><span>30min</span></li>
-              </ul>
+            <button class="dropbtn">30min</button>
+            <div class="dropdown-content">
+              <a href="/">5m</a>
+              <a href="/">1m</a>
+              <a href="/">2w</a>
+              <a href="/">7d</a>
+              <a href="/">1d</a>
+              <a href="/">12h</a>
+              <a href="/">2h</a>
+              <a href="/">1h</a>
+              <a href="/">30min</a>
             </div>
-
           </div>
           <div className="menu-item item">
-            1m
+            <span>1m</span>
           </div>
-          <div className="menu-item item dropdown">
+          {/* <div className="menu-item item dropdown">
             <HiOutlineArrowTrendingUp />
             <div className="dropdown-item">
-              <ul>
+              <ul style={{ margin: 0, padding: '8px' }}>
                 <li style={{ display: 'flex', gap: 5, alignItems: 'center' }}><MdOutlineCandlestickChart /><span>Candlestick</span></li>
                 <li style={{ display: 'flex', gap: 5, alignItems: 'center' }}><HiOutlineArrowTrendingUp /><span>Line</span></li>
               </ul>
             </div>
-          </div>
-          <div className="menu-item item dropdown">
+          </div> */}
+          {/* <div className="menu-item item dropdown">
             <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
               <MdTimeline /> <span>Indicator</span>
               <div className="dropdown-item">
-                <ul>
+                <ul style={{ margin: 0, padding: '8px' }}>
                   <li><span>Exponential Moving Average (EMA)</span></li>
                   <li><span>Simple Moving Average (SMA)</span></li>
                   <li><span>Bollinger Bands (BBands)</span></li>
@@ -75,7 +69,7 @@ function App() {
                 </ul>
               </div>
             </div>
-          </div>
+          </div> */}
           <div className="menu-item item" >
             <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
               <CgExport /> <span>Export</span>
