@@ -1,4 +1,5 @@
 window.onload = () => {
+    // change dark and light theme
     const toggleSwitch = document.querySelector('.theme-switch input[type="checkbox"]');
     const currentTheme = localStorage.getItem('theme');
     if (currentTheme) {
@@ -21,5 +22,16 @@ window.onload = () => {
     }
     toggleSwitch.addEventListener('change', switchTheme, false);
 
+    // bookmark change
+    const bookmarkColorToggle = document.querySelector('.separate-over-item');
+    bookmarkColorToggle.addEventListener('click', () => {
+        bookmarkColorToggle.style.color = '#ffcf00'
+    });
 
+    // Indicator Data
+
+    
+
+
+    
 }
