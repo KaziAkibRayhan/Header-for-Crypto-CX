@@ -11,21 +11,21 @@ import './header';
 function App() {
   return (
     <div>
-      <div className="header">
-        <div className="menu">
-          <div className="menu-item">
+      <div className="itc_chart_header">
+        <div className="itc_chart_menu">
+          <div className="itc_chart_menu_item">
             <div style={{ display: 'flex', gap: 4, alignItems: 'center' }}>
-              <RxBookmark className='separate-over-item' />
-              <RxCross2 className='separate-over-item2' />
+              <RxBookmark className='itc_chart_separate_over_item' />
+              <RxCross2 className='itc_chart_separate_over_item2' />
             </div>
           </div>
-          <div className="menu-item item">
+          <div className="itc_chart_menu_item itc_chart_hover_item">
 
             <input type="text" className='inputSearch' id="itc_chart_input" />
             <div id="itc_chart_open_div"></div>
 
           </div>
-          <div className="menu-item item dropdown">
+          <div className="itc_chart_menu_item itc_chart_hover_item itc_chart_dropdown">
             <span className="dropbtn">30min</span>
             <div className="dropdown-content">
               <li>5m</li>
@@ -39,17 +39,17 @@ function App() {
               <li>30min</li>
             </div>
           </div>
-          <div className="menu-item item">
+          <div className="itc_chart_menu_item itc_chart_hover_item">
             <span>1m</span>
           </div>
-          <div className="menu-item item dropdown">
+          <div className="itc_chart_menu_item itc_chart_hover_item itc_chart_dropdown">
             <span className='dropbtn'><HiOutlineArrowTrendingUp /></span>
             <div className="dropdown-content">
               <li><MdOutlineCandlestickChart /><span style={{ marginLeft: '5px' }}>Candlestick</span></li>
               <li><HiOutlineArrowTrendingUp /><span style={{ marginLeft: '5px' }}>Line</span></li>
             </div>
           </div>
-          <div className="menu-item item dropdown2">
+          <div className="itc_chart_menu_item itc_chart_hover_item itc_chart_dropdown2">
             <div className='dropbtn2'>
               <MdTimeline /> <span className=''>Indicator</span>
             </div>
@@ -57,30 +57,30 @@ function App() {
               <section style={{ display: 'flex' }}>
                 <div style={{ minWidth: 300 }}>
                   <div>
-                    <li id='itc_chart_EMA' onClick={(e) => console.log(e.target.textContent)}><span>Exponential Moving Average (EMA)</span></li>
-                    <li id='itc_chart_SMA' onClick={(e) => console.log(e.target.textContent)}><span>Simple Moving Average (SMA)</span></li>
-                    <li onClick={(e) => console.log(e.target.textContent)}><span>Bollinger Bands (BBands)</span></li>
-                    <li onClick={(e) => console.log(e.target.textContent)}><span>Average True Range (ATR)</span></li>
-                    <li onClick={(e) => console.log(e.target.textContent)}><span>MACD</span></li>
-                    <li onClick={(e) => console.log(e.target.textContent)}><span>Stochastic Oscillator</span></li>
-                    <li onClick={(e) => console.log(e.target.textContent)}><span>Relative Strength Index (RSI)</span></li>
-                    <li onClick={(e) => console.log(e.target.textContent)}><span>Commodity Channel Index (CCI)</span></li>
-                    <li onClick={(e) => console.log(e.target.textContent)}><span>Rate of Change (ROC)</span></li>
-                    <li onClick={(e) => console.log(e.target.textContent)}><span>Average Directional Index (ADX)</span></li>
+                    <li data-key="EMA" className='itc_chart_item'><span>Exponential Moving Average (EMA)</span></li>
+                    <li data-key="SMA" className='itc_chart_item'><span>Simple Moving Average (SMA)</span></li>
+                    <li data-key='BBands' className='itc_chart_item'><span>Bollinger Bands (BBands)</span></li>
+                    <li data-key='ATR' className='itc_chart_item'><span>Average True Range (ATR)</span></li>
+                    <li data-key='MACD' className='itc_chart_item'><span>MACD</span></li>
+                    <li data-key='SO' className='itc_chart_item'><span>Stochastic Oscillator</span></li>
+                    <li data-key='RSI' className='itc_chart_item'><span>Relative Strength Index (RSI)</span></li>
+                    <li data-key='CCI' className='itc_chart_item'><span>Commodity Channel Index (CCI)</span></li>
+                    <li data-key='ROC' className='itc_chart_item'><span>Rate of Change (ROC)</span></li>
+                    <li data-key='ADX' className='itc_chart_item'><span>Average Directional Index (ADX)</span></li>
                   </div>
                 </div>
-                <div style={{ minWidth: 300 }}>
-                  something coming
+                <div id='itc_chart_container' style={{ minWidth: 300 }}>
+                  {/* some items input here! */}
                 </div>
               </section>
             </div>
           </div>
-          <div className="menu-item item" >
+          <div className="itc_chart_menu_item item" >
             <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
               <CgExport /> <span>Export</span>
             </div>
           </div>
-          <div className="menu-item item">
+          <div className="itc_chart_menu_item item">
             <div style={{ display: 'flex', gap: 10, alignItems: 'center' }}>
               <BsAlarm /> <span>Alert</span>
             </div>
